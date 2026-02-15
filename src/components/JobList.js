@@ -82,71 +82,50 @@ const JobList = () => {
   const [value, setValue] = React.useState(0);
 
   const experienceItems = {
-    Google: {
+    Focal: {
       jobTitle: "Software Engineer @",
-      duration: "JAN 2025 - PRESENT",
+      duration: "FEB 2026 - PRESENT",
       desc: [
-        "Built and launched large-scale machine learning-driven conversion autobidding models at Google scale, influencing bidding decisions across millions of advertisers and users",
-        "Led end-to-end model development (data, training, evaluation, and production launch) for Proxybidder ML systems, directly driving multi-million-dollar revenue impact through improved conversion efficiency",
+        "TBD",
       ],
     },
-    Pinterest: {
-      jobTitle: "Software Engineer II @",
-      duration: "JUL 2022 - JAN 2025",
+    KONE: {
+      jobTitle: "Data Scientist Trainee @",
+      duration: "MAY 2025 - DEC 2025",
       desc: [
-        "Led the development of a generative AI solution using LLMs for advanced prompt engineering, improving SEO and ad relevance, and resulting in a 20% increase in click-through rates, ad revenue and business visibility",
-        "Designed and developed an intuitive user interface for a prompt management system for 500K+ users, with key focus on accessibility, real-time collaboration features, and dynamic data visualization",
+        "Developed and maintained end-to-end machine learning pipelines for churn prediction of elevator maintenance contracts.",
+        "Fixed and improved logic in ETL tasks, training data generation, and batch prediction tasks, increasing pipeline reliability and robustness.",
+        "Analysed and built new model features to improve predictions, translating business insights into meaningful predictive features in close collaboration with the business advisors.",
+        "Enhanced the prediction model performance and reproducibility by implementing hyperparameter tuning with Optuna and experiment tracking with MLFlow.",
+        "Defined a set of KPIs and built a Power BI dashboard to monitor churn metrics and model performance over time."
       ],
     },
-    Amazon: {
-      jobTitle: "Software Development Engineer II @",
-      duration: "JUL 2022 - MAY 2024",
+    CERN: {
+      jobTitle: "Summer Student @",
+      duration: "JUN 2024 - AUG 2024",
       desc: [
-        "Led development of end-to-end region build automation across Route 53 (AWS's DNS web service).  This enabled the launch of customer-facing global services in new regions within a day, a significant reduction from the previous time-frame of a month.",
-        "Re-built Route 53's core domain management and DNS systems to provide a better user experience to millions of customers.",
+        "Contributed to Rucio, a Python-based, open-source exabyte-scale distributed data management system used by ATLAS, CMS, and numerous other scientific communities.",
+        "Modernised the command-line client interface, refactored legacy code, and fixed user-reported bugs following strict CI/CD and code review standards.",
+        "Worked in an international, agile team and gained hands-on experience with containers, automated testing, and large-scale distributed systems."
       ],
     },
-    Wattpad: {
-      jobTitle: "Software Engineer Intern @",
-      duration: "MAY 2020 - APR 2021",
+    Oxford_Instruments: {
+      jobTitle: "R&D Intern @",
+      duration: "JUL 2021 - MAY 2024 | PART-TIME",
       desc: [
-        "Developed a responsive React web page (the new Story Details) from scratch, both on client and server side, for an app with massive scale (2 billion daily requests).",
-        "Iteratively built web experiences for 80 million users across high-traffic pages.",
-        "Collaborated with senior engineers and product management following best practices for the full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations.",
+        "Developed data analysis and test instrument control software for sensor characterization, including small CLI and GUI (PyQt/Tkinter) apps with real time monitoring and control over sensor measurements.",
+        "Developed software tools to support experts with data analysis, processing and format conversion of results to other platforms, reducing manual effort and enabling reliable integration of test results with internal platforms.",
       ],
     },
-    // "University of Toronto": {
-    //   jobTitle: "Research Engineer @",
-    //   duration: "MAY 2021 - SEPT 2021",
-    //   desc: [
-    //     "Developed and researched an NLP-based framework using state-of-the-art tools like Spacy and Stanza to facilitate the derivation of requirements from health data by leveraging syntactic dependencies, entity-recognition and rule-based match-making.",
-    //     " Application selected for DCS Research Award ($4,000) as part of the ”Visualizing Privacy Analysis Results” project led by Professor Marsha Chechik."
-    //   ]
-    // },
-    // Centivizer: {
-    //   jobTitle: "Software Developer @",
-    //   duration: "SEPT 2019 - APR 2020",
-    //   desc: [
-    //     "Developed interactive and neural-activation technologies to stimulate physical and cognitive functions in order to slow the progression of neurodegenerative disorders.",
-    //     "Leveraged WebRTC to develop and maintain a Node.js online video-streaming platform in real-time competitive-mode games to research the effects of active stimulation for those suffering from dementia."
-    //   ]
-    // },
-    // TDSB: {
-    //   jobTitle: "Software Engineer @",
-    //   duration: "SEPT 2019 - DEC 2020",
-    //   desc: [
-    //     "Co-developed homework management software integrable with Google Classroom by utilizing the Python’s Flask micro-framework for the back-end API and Vue.js for the front-end UI, in order to translate business requirements into a functional full-stack application."
-    //   ]
-    // },
-    // "Orange Gate": {
-    //   jobTitle: "Software Developer Intern @",
-    //   duration: "MAY 2019 - AUG 2019",
-    //   desc: [
-    //     "Developed a Node.js smart home system through Facebook’s Messenger integrated with Bocco sensors and other smart devices (Nest camera, TPLink smart plugs) to derive conclusions about the current state of the home",
-    //     "Identified continuous improvements in data quality, design reports and coding activities, presenting results and findings to internal business stakeholders.",
-    //     "Relevant technologies/tools used: DialogFlow, Vision, AutoML, Messenger Bot API, MongoDB."
-    //   ]
-    // }
+    ABB: {
+      jobTitle: "Data Analyst Intern @",
+      duration: "JUL 2023 - AUG 2023",
+      desc: [
+        "Analysed user data on the usage of software tools and drives to identify trends and gaps in the data.",
+        "Defined and documented improved data collection requirements for Drive Composer 3.X software by identifying the most valuable data points to monitor.",
+        "Built interactive reports in Azure Application Insights to support product managers in data-driven decision-making.",
+      ],
+    },
   };
 
   const handleChange = (event, newValue) => {
@@ -163,7 +142,7 @@ const JobList = () => {
         className={classes.tabs}
       >
         {Object.keys(experienceItems).map((key, i) => (
-          <Tab label={isHorizontal ? `0${i}.` : key} {...a11yProps(i)} />
+          <Tab label={isHorizontal ? `0${i}.` : key.replace("_", " ")} {...a11yProps(i)} />
         ))}
       </Tabs>
       {Object.keys(experienceItems).map((key, i) => (
@@ -171,7 +150,7 @@ const JobList = () => {
           <span className="joblist-job-title">
             {experienceItems[key]["jobTitle"] + " "}
           </span>
-          <span className="joblist-job-company">{key}</span>
+          <span className="joblist-job-company">{key.replace("_", " ")}</span>
           <div className="joblist-duration">
             {experienceItems[key]["duration"]}
           </div>

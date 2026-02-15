@@ -21,12 +21,13 @@ class Credits extends React.Component {
       <FadeInSection>
         <div id="credits">
           <div className="ending-credits">
-            <div>Built and designed by Gazi Jarin. </div>
-            <div>All rights reserved. ©</div>
+            <div>Original design by Gazi Jarin. Developed & Modified by Eric Banzuzi.</div>
+            <div>© {new Date().getFullYear()} Eric Banzuzi</div>
           </div>
         </div>
       </FadeInSection>
     );
+
   }
 }
 
