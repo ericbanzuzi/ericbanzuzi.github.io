@@ -31,9 +31,9 @@ class Intro extends React.Component {
         <div className="intro-block">
           <Typist avgTypingDelay={120}>
             <span className="intro-title">
-              {"Hi, "}
+              {"Hi, it's "}
               <span className="intro-name">{"Eric"}</span>
-              {" here."}
+              {"."}  
             </span>
           </Typist>
           <FadeInSection>
